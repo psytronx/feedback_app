@@ -48,7 +48,7 @@
         </head>
         <body>
             <header>
-                <a href="http://www.slimframework.com"><img src="submodules/Slim/logo.png" alt="Slim"/></a>
+                <a href="http://www.slimframework.com"><img src="/web/img/logo.png" alt="Slim"/></a>
             </header>
             <h1>Welcome to Slim!</h1>
             <p>
