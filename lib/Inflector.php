@@ -142,7 +142,7 @@ class Inflector {
 	}
 	
 	public static function class_name_from_filename($filename) {
-		return MvcInflector::camelize(str_replace('.php', '', $filename));
+		return Inflector::camelize(str_replace('.php', '', $filename));
 	}
 	
 	public static function camelize($string) {
@@ -153,8 +153,8 @@ class Inflector {
 	}
 	
 	public static function tableize($string) {
-		$string = MvcInflector::underscore($string);
-		$string = MvcInflector::pluralize($string);
+		$string = Inflector::underscore($string);
+		$string = Inflector::pluralize($string);
 		return $string;
 	}
 	
@@ -239,7 +239,7 @@ class Inflector {
 	}
 	
 	public static function pluralize_titleize($string) {
-		$string = MvcInflector::pluralize(MvcInflector::titleize($string));
+		$string = Inflector::pluralize(Inflector::titleize($string));
 		return $string;
 	}
 
