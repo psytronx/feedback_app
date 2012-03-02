@@ -8,6 +8,15 @@ $app->get('/api/contacts/', function () {
 	$cn->getContacts();
 });
 
+$app->post('/api/contacts/', function () use ($app) {
+	
+	$req = $app->request();
+	$bdy = $req->getBody();
+	$contact = json_decode($bdy);
+	$cn = new Contacts();
+	$cn->insertContact($contact[0]);
+});
+
 $app->get('/api/contacts/:id', function ($id) {
     $cn = new Contacts();
 	$cn->getContactsById($id);
@@ -26,6 +35,12 @@ $app->put('/api/contacts/:id', function ($id) use ($app) {
 	 $cn = new Contacts();
 	 $cn->updateContact($id,$contact[0]);
 });
+
+$app->delete('/api/contacts/:id', function ($id) {
+    $cn = new Contacts();
+	$cn->deleteContact($id);
+});
+
 
 $app->get('/api/locations/', function () {
     $cn = new Locations();

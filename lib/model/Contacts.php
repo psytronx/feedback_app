@@ -43,6 +43,33 @@ Class Contacts
 		header("Content-Type: application/json");
 		echo json_encode($result);
 	}
+	
+	public function insertContact($contact){
+				
+		$db = new DatabaseConnection();
+		$conn = $db->connectToDB();
+		
+		 $fName = $contact->first_name;
+		 $lName = $contact->last_name;
+		 	
+		$query = "INSERT into contact (first_name,last_name) Values('$fName' ,'$lName' )";
+			
+		$result = $db->updateDatabase($query);
+		$id = mysql_insert_id();
+		$db->closeDBConnection($conn);
+		header("Content-Type: application/json");
+		echo json_encode($id);
+	}
+	
+	public function deleteContact($id){	
+		$db = new DatabaseConnection();
+		$conn = $db->connectToDB();
+		
+		$result = $db->updateDatabase("DELETE FROM contact where id = $id");
+		$db->closeDBConnection($conn);
+    	header("Content-Type: application/json");
+		echo json_encode($result);
+	}
 
 }
 
