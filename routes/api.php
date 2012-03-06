@@ -44,13 +44,6 @@ $app->get('/api/contacts/:id/venues', function ($id) {
 	$cn->getVenuesByContactId($id);
 });
 
-
-$app->get('/api/locations/', function () {
-    $cn = new Locations();
-	$cn->getLocations();
-});
-
-
 $app->get('/api/users/', function () {
     $cn = new Users();
 	$cn->getUsers();
@@ -75,7 +68,7 @@ $app->put('/api/users/:id', function ($id) use ($app) {
 	$req = $app->request();
 	$bdy = $req->getBody();
     	$user = json_decode($bdy);
-	 $cn = new Contacts();
+	 $cn = new Users();
 	 $cn->updateUser($id,$user[0]);
 });
 
@@ -88,5 +81,46 @@ $app->get('/api/users/:id/suggestions', function ($id) {
     $cn = new Suggestions();
 	$cn->getSuggestionsByUser($id);
 });
+
+$app->get('/api/suggestions/', function () {
+    $cn = new Suggestions();
+	$cn->getSuggestions();
+});
+
+$app->get('/api/suggestions/:id', function ($id) {
+    $cn = new Suggestions();
+	$cn->getSuggestionsByID($id);
+});
+
+$app->post('/api/suggestions/', function () use ($app) {
+	
+	$req = $app->request();
+	$bdy = $req->getBody();
+	$suggestion = json_decode($bdy);
+	$cn = new Suggestions();
+	$cn->insertSuggestion($suggestion[0]);
+});
+
+$app->put('/api/suggestions/:id', function ($id) use ($app) {
+	
+	$req = $app->request();
+	$bdy = $req->getBody();
+    	$suggestion = json_decode($bdy);
+	 $cn = new Suggestions();
+	 $cn->updateSuggestion($id,$suggestion[0]);
+});
+
+$app->delete('/api/suggestions/:id', function ($id) {
+    $cn = new Suggestions();
+	$cn->deleteSuggestion($id);
+});
+
+
+$app->get('/api/locations/', function () {
+    $cn = new Locations();
+	$cn->getLocations();
+});
+
+
 
 ?>

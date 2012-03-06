@@ -14,6 +14,28 @@ Class Suggestions
 			echo json_encode($result);
 	}
 	
+	public function getSuggestionsByID($id){
+		
+			$db = new DatabaseConnection();
+			$conn = $db->connectToDB();
+			$query = "SELECT s.id,s.data from Suggestion s where s.id = $id";
+			$result = $db->queryDatabse($query);
+			$db->closeDBConnection($conn);
+	    	header("Content-Type: application/json");
+			echo json_encode($result);
+	}
+	
+	public function getSuggestions(){
+		
+			$db = new DatabaseConnection();
+			$conn = $db->connectToDB();
+			$query = "SELECT s.id,s.data from Suggestion s ";
+			$result = $db->queryDatabse($query);
+			$db->closeDBConnection($conn);
+	    	header("Content-Type: application/json");
+			echo json_encode($result);
+	}
+	
 	public function updateSuggestion($id,$suggestion){
 		
 			
@@ -38,7 +60,7 @@ Class Suggestions
 		
 		$data = $suggestion->data;
 		$user_id = $suggestion->user_id;
-		$venue_id = $suggestion->user_id;
+		$venue_id = $suggestion->venue_id;
 		
 		$query_in_suggestion = "INSERT into suggestion (data) Values('$data')"; 		 	
 		$result = $db->updateDatabase($query);
@@ -59,6 +81,33 @@ Class Suggestions
 		}		
 		
 	}
+	
+	
+	public function deleteSuggestion($id){
+		
+		$db = new DatabaseConnection();
+		$conn = $db->connectToDB();
+		
+		$query_in_suggestion = "DELETE from userSuggestions where suggestion_id = $id"; 		 	
+		$r1 = $db->updateDatabase($query);
+		
+		
+		$query_in_suggestion = "DELETE from venueSuggestions where suggestion_id = $id"; 		 	
+		$r2 = $db->updateDatabase($query);
+		
+		
+		$query_in_suggestion = "DELETE from suggestion where id = $id"; 		 	
+		$r3 = $db->updateDatabase($query);
+		
+		
+		if($r1 == $r2 == $r3)
+			echo json_encode("Suggestion Deleted");
+		else
+			echo json_encode("Error Deleting Suggestion");
+			
+		
+	}
+	
 }
 
 ?>
