@@ -100,7 +100,7 @@ Class Suggestions
 		$r3 = $db->updateDatabase($query);
 		
 		
-		if($r1 == $r2 == $r3)
+		if($r1 == $r2)
 			echo json_encode("Suggestion Deleted");
 		else
 			echo json_encode("Error Deleting Suggestion");
