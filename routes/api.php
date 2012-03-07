@@ -127,7 +127,7 @@ $app->post('/api/locations/', function () use ($app) {
 	$bdy = $req->getBody();
 	$location = json_decode($bdy);
 	$cn = new Locations();
-	$cn->insertContact($locaiton[0]);
+	$cn->insertLocation($locaiton[0]);
 });
 
 $app->get('/api/locations/:id', function ($id) {
@@ -180,6 +180,11 @@ $app->put('/api/venues/:id', function ($id) use ($app) {
 $app->delete('/api/venues/:id', function ($id) {
     $cn = new Venues();
 	$cn->deleteVenue($id);
+});
+
+$app->get('/api/venues/:id/suggestions', function ($id) {
+    $cn = new Suggestions();
+	$cn->getSuggestionsByVenue($id);
 });
 
 

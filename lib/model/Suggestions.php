@@ -14,6 +14,17 @@ Class Suggestions
 			echo json_encode($result);
 	}
 	
+	public function getSuggestionsByVenue($id){
+		
+			$db = new DatabaseConnection();
+			$conn = $db->connectToDB();
+			$query = "SELECT s.id,s.data from Suggestion s join venueSuggestions vs on vs.suggestion_id = s.id where vs.venue_id = $id";
+			$result = $db->queryDatabse($query);
+			$db->closeDBConnection($conn);
+	    	header("Content-Type: application/json");
+			echo json_encode($result);
+	}
+	
 	public function getSuggestionsByID($id){
 		
 			$db = new DatabaseConnection();
