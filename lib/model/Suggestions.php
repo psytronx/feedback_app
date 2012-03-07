@@ -54,6 +54,7 @@ Class Suggestions
 	}
 	
 	public function insertSuggestion($suggestion){
+	
 				
 		$db = new DatabaseConnection();
 		$conn = $db->connectToDB();
@@ -62,18 +63,19 @@ Class Suggestions
 		$user_id = $suggestion->user_id;
 		$venue_id = $suggestion->venue_id;
 		
-		$query_in_suggestion = "INSERT into suggestion (data) Values('$data')"; 		 	
+		$query = "INSERT into suggestion (data) Values('$data')"; 		 	
 		$result = $db->updateDatabase($query);
 		$sugg_id = mysql_insert_id();
+					
 		if ($sugg_id){
 			$query_in_user_suggestions = "INSERT into userSuggestions (user_id,suggestion_id) Values($user_id ,$sugg_id )";
 			$result = $db->updateDatabase($query_in_user_suggestions);
 		    $query_in_venue_suggestions = "INSERT into venueSuggestions (venue_id,suggestion_id) Values($venue_id ,$sugg_id )";		
-			$result = $db->updateDatabase($query_in_user_suggestions);
-			
+			$result = $db->updateDatabase($query_in_venue_suggestions);
+		 
 			$db->closeDBConnection($conn);
 			header("Content-Type: application/json");
-			echo json_encode($id);
+			echo json_encode("Added Suggestion");
 		}	
 		else{
 			header("Content-Type: application/json");
@@ -88,15 +90,15 @@ Class Suggestions
 		$db = new DatabaseConnection();
 		$conn = $db->connectToDB();
 		
-		$query_in_suggestion = "DELETE from userSuggestions where suggestion_id = $id"; 		 	
+		$query = "DELETE from userSuggestions where suggestion_id = $id"; 		 	
 		$r1 = $db->updateDatabase($query);
 		
 		
-		$query_in_suggestion = "DELETE from venueSuggestions where suggestion_id = $id"; 		 	
+		$query = "DELETE from venueSuggestions where suggestion_id = $id"; 		 	
 		$r2 = $db->updateDatabase($query);
 		
 		
-		$query_in_suggestion = "DELETE from suggestion where id = $id"; 		 	
+		$query = "DELETE from suggestion where id = $id"; 		 	
 		$r3 = $db->updateDatabase($query);
 		
 		
