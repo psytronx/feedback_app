@@ -1,97 +1,102 @@
 <!DOCTYPE html>
-    <html>
-        <head>
-            <meta charset="utf-8"/>
-            <title>Slim Micro PHP 5 Framework</title>
-            <style>
-                html,body,div,span,object,iframe,
-                h1,h2,h3,h4,h5,h6,p,blockquote,pre,
-                abbr,address,cite,code,
-                del,dfn,em,img,ins,kbd,q,samp,
-                small,strong,sub,sup,var,
-                b,i,
-                dl,dt,dd,ol,ul,li,
-                fieldset,form,label,legend,
-                table,caption,tbody,tfoot,thead,tr,th,td,
-                article,aside,canvas,details,figcaption,figure,
-                footer,header,hgroup,menu,nav,section,summary,
-                time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;}
-                body{line-height:1;}
-                article,aside,details,figcaption,figure,
-                footer,header,hgroup,menu,nav,section{display:block;}
-                nav ul{list-style:none;}
-                blockquote,q{quotes:none;}
-                blockquote:before,blockquote:after,
-                q:before,q:after{content:'';content:none;}
-                a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent;}
-                ins{background-color:#ff9;color:#000;text-decoration:none;}
-                mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold;}
-                del{text-decoration:line-through;}
-                abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help;}
-                table{border-collapse:collapse;border-spacing:0;}
-                hr{display:block;height:1px;border:0;border-top:1px solid #cccccc;margin:1em 0;padding:0;}
-                input,select{vertical-align:middle;}
-                html{ background: #EDEDED; height: 100%; }
-                body{background:#FFF;margin:0 auto;min-height:100%;padding:0 30px;width:440px;color:#666;font:14px/23px Arial,Verdana,sans-serif;}
-                h1,h2,h3,p,ul,ol,form,section{margin:0 0 20px 0;}
-                h1{color:#333;font-size:20px;}
-                h2,h3{color:#333;font-size:14px;}
-                h3{margin:0;font-size:12px;font-weight:bold;}
-                ul,ol{list-style-position:inside;color:#999;}
-                ul{list-style-type:square;}
-                code,kbd{background:#EEE;border:1px solid #DDD;border:1px solid #DDD;border-radius:4px;-moz-border-radius:4px;-webkit-border-radius:4px;padding:0 4px;color:#666;font-size:12px;}
-                pre{background:#EEE;border:1px solid #DDD;border-radius:4px;-moz-border-radius:4px;-webkit-border-radius:4px;padding:5px 10px;color:#666;font-size:12px;}
-                pre code{background:transparent;border:none;padding:0;}
-                a{color:#70a23e;}
-                header{padding: 30px 0;text-align:center;}
-            </style>
-        </head>
-        <body>
-            <header>
-                <a href="http://www.slimframework.com"><img src="/web/img/logo.png" alt="Slim"/></a>
-            </header>
-            <h1>Welcome to Slim!</h1>
-            <p>
-                Congratulations! Your Slim application is running. If this is
-                your first time using Slim, start with this <a href="http://www.slimframework.com/learn" target="_blank">"Hello World" Tutorial</a>.
-            </p>
-            <section>
-                <h2>Get Started</h2>
-                <ol>
-                    <li>The application code is in <code>index.php</code></li>
-                    <li>Read the <a href="http://www.slimframework.com/documentation/stable" target="_blank">online documentation</a></li>
-                    <li>Follow <a href="http://www.twitter.com/slimphp" target="_blank">@slimphp</a> on Twitter</li>
-                </ol>
-            </section>
-            <section>
-                <h2>Slim Framework Community</h2>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Feedback.app</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-                <h3>Support Forum</h3>
-                <p>
-                    Join the <a href="http://forum.slimframework.com" target="_blank">Slim Framework forum</a>
-                    to read announcements, chat with fellow Slim users, ask questions, help others, or show off your cool 
-                    Slim Framework apps.
-                </p>
+    <!-- Le styles -->
+    <link href="/web/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+    </style>
+    <link href="/web/css/bootstrap-responsive.css" rel="stylesheet">
 
-                <h3>Twitter</h3>
-                <p>
-                    Follow <a href="http://www.twitter.com/slimphp" target="_blank">@slimphp</a> on Twitter to receive the very latest news
-                    and updates about the framework.
-                </p>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 
-                <h3>IRC</h3>
-                <p>
-                    Find Josh Lockhart in the "##slim" chat room during the day. Say hi, ask questions,
-                    or just hang out with fellow Slim users.
-                </p>
-            </section>
-            <section style="padding-bottom: 20px">
-                <h2>Slim Framework Extras</h2>
-                <p>
-                    Custom View classes for Smarty, Twig, Mustache, and other template
-                    frameworks are available online in a separate repository.
-                </p>
-                <p><a href="https://github.com/codeguy/Slim-Extras" target="_blank">Browse the Extras Repository</a></p>
-            </section>
-        </body>
-    </html>
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="../assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">feedback.app</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#search">Search</a></li>
+              <li><a href="#merchants">Merchants</a></li>
+            </ul>
+            <ul class='nav pull-right'>
+                <li><a href="#login">Login</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="hero-unit">
+        <h1>Hello, world!</h1>
+        <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+        <p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+      </div>
+
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="span4">
+          <h2>Heading</h2>
+           <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn" href="#">View details &raquo;</a></p>
+        </div>
+        <div class="span4">
+          <h2>Heading</h2>
+           <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn" href="#">View details &raquo;</a></p>
+       </div>
+        <div class="span4">
+          <h2>Heading</h2>
+          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <p><a class="btn" href="#">View details &raquo;</a></p>
+        </div>
+      </div>
+
+      <hr>
+
+      <footer>
+        <p>&copy; Company 2012</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/web/js/jquery.min.js"></script>
+    <script src="/web/js/knockout-2.0.0.js"></script>
+    <script src="/web/js/bootstrap.min.js"></script>
+
+
+  </body>
+</html>
