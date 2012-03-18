@@ -1,1 +1,0 @@
-steal("funcunit/qunit", "./feedback_test.js");

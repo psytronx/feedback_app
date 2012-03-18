@@ -11,11 +11,10 @@ Class DatabaseConnection
 	
 	//constructor
 	public function __construct() {
-        $this->dbServer = "127.0.0.1";
-		$this->userName = "root";
-        $this->password = "";
-		$this->database = "resto";
-	
+        $this->dbServer = DB_HOST;
+		$this->userName = DB_USER;
+        $this->password = DB_PASS;
+		$this->database = DB_NAME;
     }
 
 	public function connectToDB(){

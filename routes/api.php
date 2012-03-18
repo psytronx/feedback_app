@@ -30,8 +30,8 @@ $app->put('/api/contacts/:id', function ($id) use ($app) {
 	$req = $app->request();
 	$bdy = $req->getBody();
 	$contact = json_decode($bdy);
-	 $cn = new Contacts();
-	 $cn->updateContact($id,$contact[0]);
+	$cn = new Contacts();
+	$cn->updateContact($id,$contact[0]);
 });
 
 $app->delete('/api/contacts/:id', function ($id) {
@@ -49,7 +49,6 @@ $app->get('/api/locations/', function () {
     $cn = new Locations();
 	$cn->getLocations();
 });
-
 
 $app->get('/api/users/', function () {
     $cn = new Users();
@@ -71,12 +70,11 @@ $app->get('/api/users/:id', function ($id) {
 });
 
 $app->put('/api/users/:id', function ($id) use ($app) {
-	
 	$req = $app->request();
 	$bdy = $req->getBody();
-    	$user = json_decode($bdy);
-	 $cn = new Contacts();
-	 $cn->updateUser($id,$user[0]);
+	$user = json_decode($bdy);
+	$cn = new Contacts();
+	$cn->updateUser($id,$user[0]);
 });
 
 $app->delete('/api/users/:id', function ($id) {
